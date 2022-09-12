@@ -1,0 +1,12 @@
+table {
+  border-style: solid;
+  border-width: 2px;
+  border-color: blue;
+  border-collapse: collapse;
+}
+
+td {
+  border-style: solid;
+  border-width: 2px;
+  border-color: blue;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Opgave 3.3</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Brætspil: Kryds og bolle</h1>
+    <div class="container">
+      <img
+        src="data:image/jpeg;base64,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LLaKxgyFfd9ra/QmVmcqV8eUWtH6A2HV3e5XMKotn3k/pJHGY5KYLOR3DifKRzaHxZ+KuLfdJPQAGXMLq4oYGoxc8muB5jefOOeMJhlV7QFV3pln3Fjs35X6CSGKrBF3Ak7hbee4/tPdWoiLmoULutlbuAkNWrFjtN4DuH6ycnK7Vt446W3Nrk7zmf08Jnav6HbFVLG+wvxnn90d5mHgMG+IqBE3neeCjixnX9XtDpRRUUZD1J4k98tIhaztGYEIqgAAAAADgBwk3h6Vpbw9KZyCdYegJWInHSIiAiIgJQiViBYfCo29RMDGaBo1BZ0VhyYAjrJaIGjY/wCjrCv8KBT90legNuk1vH/ReR/TqOPxKrdRb2nXJWc1HZlXAcbqRjEvZVflstY+jWHWQuJ0diKf9Sk69+ySPNhcdZ9KlAd4Exqujqbb1E5xjvKvmdagM97Q/n+J33H6oYar8SIT3qCfXeJrmO+jGg19jaT8LH2a4ji1yjkwIgTd8b9GtdL7FS45MpH+5SfaQeK1Sxqb6e33owPQ2PSc1WuUQl7C5jbHG0uYnD1EyqI6fjUr/wAgOktBha1h+nScdZCYlhuY+tx1mSukqnGx8ZGKgve9/wCeMqit3nrFNpynpjLNfQ398plLpanb4vIqT6cRNeTcL7/5ulakzqO8rGdiMT9YQ1rKNw599uHhMQqzsEQFmY2A4kmUZ+yPCb3qXq8UAquO2wyB+RT+ZlMZ9J5VLapavrQQA5ubF25nkO4TdMPRlrC0LACSVJJtO9vdNZdlBKzgREQEREBERAREQEREBERAREQEREClpbagp3qJdiBg1dGU23rITHak4WrfapJfmBsn/UtjNoiDbm2N+jKkf6buvdcMPRhfrNexv0dYlPgdHH3gUPQMOona5Qic1GuVfO+L1bxlO+1Qc24pZ7/6ST6iRNa6XDKVPIgg+hn0y2HU71Ex6mjUPAeYvOad5OP6kartWK16i2QZoD8x+1biJ1DDYcLkJmtgjwM90sORvm50xbt6oU5lgTyqz3OBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERED//2Q=="
+        width="200"
+      />
+      <p>
+        orem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+      </p>
+      <table>
+        <tr>
+          <td>X</td>
+          <td>O</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>X</td>
+          <td>X</td>
+          <td>O</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p>
+        It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout. The point of
+        using Lorem Ipsum is that it has a more-or-less normal distribution of
+        letters, as opposed to using 'Content here, content here', making it
+        look like readable English. Many desktop publishing packages and web
+        page editors now use Lorem Ipsum as their default model text, and a
+        search for 'lorem ipsum' will uncover many web sites still in their
+        infancy. Various versions have evolved over the years, sometimes by
+        accident, sometimes on purpose (injected humour and the like).
+        <br /><br />
+        <a href="https://da.wikipedia.org/wiki/Kryds_og_bolle">
+          Kryds og bolle | Fra Wikipedia, den frie encyklopædi
+        </a>
+      </p>
+    </div>
+  </body>
+</html>
