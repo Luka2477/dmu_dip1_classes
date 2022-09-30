@@ -51,14 +51,12 @@ const initPostsTable = () => {
   return table;
 };
 
-const showPosts = (id) => {
-  get(postUrl + id)
-    .then((posts) => {
-      if (postsTable !== null) document.body.removeChild(postsTable);
-      postsTable = initPostsTable();
-      appendPostsToTable(postsTable, posts);
-    })
-    .catch((err) => console.log(err));
+const showPosts = async (id) => {
+  if (postsTable !== null) document.body.removeChild(postsTable);
+
+  postsTable = initPostsTable();
+  const posts = await get(postUrl + id);
+  appendPostsToTable(postsTable, posts);
 };
 
 const appendPostsToTable = (table, posts) => {
@@ -77,8 +75,8 @@ const appendPostsToTable = (table, posts) => {
 
 const usersTable = initUsersTable();
 
-get(userUrl)
-  .then((users) => {
-    appendUsersToTable(usersTable, users);
-  })
-  .catch((err) => console.log(err));
+(async () => {
+  const users = await get(userUrl);
+
+  appendUsersToTable(usersTable, users);
+})();
