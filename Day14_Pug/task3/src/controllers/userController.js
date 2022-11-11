@@ -1,25 +1,18 @@
 const get = async (req, res) => {
-  let testUser = {
-    users: [
-      {
-        username: "luka2477",
-        age: 22,
-        created_at: new Date().toDateString(),
-      },
-      {
-        username: "mike123123",
-        age: 26,
-        created_at: new Date().toDateString(),
-      },
-      {
-        username: "esbena91239",
-        age: 21,
-        created_at: new Date().toDateString(),
-      },
-    ],
+  const getUsers = async () => {
+    const res = await fetch("https://randomuser.me/api/?nat=dk&results=100");
+
+    if (!res.ok) {
+      console.log(res.status, res.statusText);
+      return;
+    }
+
+    const json = await res.json();
+    return json;
   };
 
-  res.render("users", testUser);
+  const users = await getUsers();
+  res.render("users", users);
 };
 
 export default { get };

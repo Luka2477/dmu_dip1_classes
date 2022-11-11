@@ -1,17 +1,49 @@
 body
-    h2 Using objects passed from js
-    each user in users
-      p username: #{user.username}
-      p age: #{user.age}
-      p 
-          |he/she is a 
-          - 
-          if user.age<12
-              |child
-          else if user.age<20
-              |teenager
-          else 
-              |adult
-      p user was created at #{user.created_at}
-      hr
-        
+  style(type='text/css').
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;word-break:normal;}
+  
+  h2 Using objects passed from js
+  table.tg
+    tr
+      th gender
+      th name
+      th street
+      th city
+      th state
+      th country
+      th postcode
+      th coordinates
+      th timezone
+      th email
+      th username
+      th password
+      th current age
+      th registered at age
+      th phone
+      th cell
+      th id name
+      th id value
+      th nationality
+    each user in results
+      tr
+        td #{user.gender}
+        td #{user.name.title} #{user.name.first} #{user.name.last}
+        td #{user.location.street.name} #{user.location.street.number}
+        td #{user.location.city}
+        td #{user.location.state}
+        td #{user.location.country}
+        td #{user.location.postcode}
+        td #{user.location.coordinates.latitude} | #{user.location.coordinates.longitude}
+        td #{user.location.timezone.offset} | #{user.location.timezone.description}
+        td #{user.email}
+        td #{user.login.username}
+        td #{user.login.password}
+        td #{user.dob.age}
+        td #{user.registered.age}
+        td #{user.phone}
+        td #{user.cell}
+        td #{user.id.name}
+        td #{user.id.value}
+        td #{user.nat}
