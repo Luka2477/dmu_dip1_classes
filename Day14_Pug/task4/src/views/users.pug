@@ -1,0 +1,59 @@
+body
+  style(type='text/css').
+    .error {color:red;font-weight:bold;}
+    .tg {border-collapse:collapse;border-spacing:0;}
+    .tg td {border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th {border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;word-break:normal;}
+  
+  h2 Using objects passed from js
+
+  if results.length < 10
+    p.error Too few results
+  else if results.length > 100
+    p.error Too many results
+  else
+    table.tg
+      tr
+        th gender
+        th name
+        th street
+        th city
+        th state
+        th country
+        th postcode
+        th coordinates
+        th timezone
+        th email
+        th username
+        th password
+        th current age
+        th registered at age
+        th phone
+        th cell
+        th id name
+        th id value
+        th nationality
+      each user in results
+        tr
+          if !["GB", "DK", "DE", "FR"].includes(user.nat)
+            td.error(colspan = "19") user has nationality #{user.nat} which is not accepted
+          else
+            td #{user.gender}
+            td #{user.name.title} #{user.name.first} #{user.name.last}
+            td #{user.location.street.name} #{user.location.street.number}
+            td #{user.location.city}
+            td #{user.location.state}
+            td #{user.location.country}
+            td #{user.location.postcode}
+            td #{user.location.coordinates.latitude} | #{user.location.coordinates.longitude}
+            td #{user.location.timezone.offset} | #{user.location.timezone.description}
+            td #{user.email}
+            td #{user.login.username}
+            td #{user.login.password}
+            td #{user.dob.age}
+            td #{user.registered.age}
+            td #{user.phone}
+            td #{user.cell}
+            td #{user.id.name}
+            td #{user.id.value}
+            td #{user.nat}
