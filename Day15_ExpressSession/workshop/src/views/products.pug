@@ -1,0 +1,65 @@
+body
+  style(type='text/css').
+    .error {color:red;font-weight:bold;}
+    .tg {border-collapse:collapse;border-spacing:0;}
+    .tg td {border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th {border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;word-break:normal;}
+  
+
+  h1 Products
+
+  table.tg
+    tr
+      th
+      th Title
+      th Description
+      th Price
+      th Discount percentage
+      th Rating
+      th Stock
+      th Brand
+      th Category
+      th Thumbnail
+    for product of products
+      tr
+        td
+          button(onclick="buyProduct(" + product.id + ")") Buy
+        td= product.title
+        td= product.description
+        td= product.price
+        td= product.discountPercentage
+        td= product.rating
+        td= product.stock
+        td= product.brand
+        td= product.category
+        td= product.thumbnail
+
+  if ids
+    h3 IDs:
+      ul
+        for id of ids
+          li= id
+
+  script.
+    const buyProduct = async (id) => {
+      try {
+        const res = await post(`/products/${id}/buy`);
+        window.location.href = "/products";
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    const post = async (url, data) => {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (res.status !== 201) // Created 
+        throw new Error(res.status);
+
+      return await res.text();
+    }
