@@ -1,0 +1,15 @@
+body
+    h2 Using object passed from js
+    p username: #{username}
+    p age: #{age}
+    p 
+        |he/she is a 
+        - 
+        if age<12
+            |child
+        else if age<20
+            |teenager
+        else 
+            |adult
+    p user was created at #{created_at}
+        
